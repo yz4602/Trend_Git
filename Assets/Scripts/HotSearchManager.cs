@@ -5,86 +5,88 @@ using UnityEngine.UI;
 
 public class HotSearchManager : MonoBehaviour
 {
-    // ¼ÙÉèÄãÓĞÒ»¸öUIÔªËØÀ´Õ¹Ê¾ÈÈËÑ±êÌâ
-    public GameObject hotSearchItemPrefab;
-    public Transform hotSearchListParent;
+	// å‡è®¾ä½ æœ‰ä¸€ä¸ªUIå…ƒç´ æ¥å±•ç¤ºçƒ­æœæ ‡é¢˜
+	public GameObject hotSearchItemPrefab;
+	public Transform hotSearchListParent;
 
-    // ´æ´¢ËùÓĞ¿ÉÄÜµÄÈÈËÑ±êÌâ
-    private List<string> potentialHotSearches = new List<string>();
+	// å­˜å‚¨æ‰€æœ‰å¯èƒ½çš„çƒ­æœæ ‡é¢˜
+	private List<string> potentialHotSearches = new List<string>();
 
-    // ´æ´¢µ±Ç°Ñ¡ÖĞµÄÇ°5ÈÈËÑ±êÌâ
-    private List<string> currentTopFiveHotSearches = new List<string>();
-    
-    void Start()
-    {
-        // ³õÊ¼»¯Ò»Ğ©ÈÈËÑ±êÌâ
-        potentialHotSearches.Add("ÕÅŞ±ÓÂ¸Ò½ÒÂ¶ĞĞÒµºÚÄ»");
-        potentialHotSearches.Add("ĞĞÒµ¾ŞÍ··´»÷");
-        potentialHotSearches.Add("ĞĞÒµ¾ŞÍ·Íõzhe·´»÷");
-        potentialHotSearches.Add("ĞĞÒµ¾ŞÍ·Åà¸ùÍõ·´»÷");
-        // ...Ìí¼Ó¸ü¶à±êÌâ
-        // ×¢Òâ£ºÊµ¼ÊÓÎÏ·ÖĞÕâĞ©Êı¾İ¿ÉÄÜÀ´×Ô·şÎñÆ÷»ò±¾µØ»¯ÎÄ¼ş
+	// å­˜å‚¨å½“å‰é€‰ä¸­çš„å‰5çƒ­æœæ ‡é¢˜
+	private List<string> currentTopFiveHotSearches = new List<string>();
+	
+	void Start()
+	{
+		// åˆå§‹åŒ–ä¸€äº›çƒ­æœæ ‡é¢˜
+		potentialHotSearches.Add("å¼ è–‡å‹‡æ•¢æ­éœ²è¡Œä¸šé»‘å¹•");
+		potentialHotSearches.Add("è¡Œä¸šå·¨å¤´åå‡»");
+		potentialHotSearches.Add("è¡Œä¸šå·¨å¤´ç‹å–†åå‡»");
+		potentialHotSearches.Add("è¡Œä¸šå·¨å¤´åŸ¹æ ¹ç‹åå‡»");
+		potentialHotSearches.Add("å¼ è–‡å‹‡æ•¢è¡Œä¸šé»‘å¹•");
+		potentialHotSearches.Add("å¼ è–‡å‹‡æ•¢è¡Œä¸šé»‘å¹•123");
+		// ...æ·»åŠ æ›´å¤šæ ‡é¢˜
+		// æ³¨æ„ï¼šå®é™…æ¸¸æˆä¸­è¿™äº›æ•°æ®å¯èƒ½æ¥è‡ªæœåŠ¡å™¨æˆ–æœ¬åœ°åŒ–æ–‡ä»¶
 
-        // ´´½¨³õÊ¼µÄÈÈËÑÁĞ±í
-        UpdateHotSearchListUI();
-    }
+		// åˆ›å»ºåˆå§‹çš„çƒ­æœåˆ—è¡¨
+		UpdateHotSearchListUI();
+	}
 
-    // Õâ¸ö·½·¨ÓÃÓÚ¸üĞÂUIÁĞ±í
-    private void UpdateHotSearchListUI()
-    {
-        // Çå³ı¾ÉµÄÈÈËÑÌõÄ¿
-        foreach (Transform child in hotSearchListParent)
-        {
-            Destroy(child.gameObject);
-        }
+	// è¿™ä¸ªæ–¹æ³•ç”¨äºæ›´æ–°UIåˆ—è¡¨
+	private void UpdateHotSearchListUI()
+	{
+		// æ¸…é™¤æ—§çš„çƒ­æœæ¡ç›®
+		foreach (Transform child in hotSearchListParent)
+		{
+			Destroy(child.gameObject);
+		}
 
-        // ÎªÃ¿¸ö¿ÉÄÜµÄÈÈËÑ±êÌâ´´½¨Ò»¸öUIÔªËØ
-        foreach (var hotSearch in potentialHotSearches)
-        {
-            var hotSearchItem = Instantiate(hotSearchItemPrefab, hotSearchListParent);
-            hotSearchItem.GetComponent<Text>().text = hotSearch;
-            // Ìí¼Óµã»÷ÊÂ¼ş»òÍÏ×§ÊÂ¼şµÄ¼àÌı£¬ÕâÀïÒÔ°´Å¥µã»÷ÎªÀı
-            //hotSearchItem.GetComponentInChildren<Button>().onClick.AddListener(() => SelectHotSearch(hotSearch));
-        }
-    }
+		// ä¸ºæ¯ä¸ªå¯èƒ½çš„çƒ­æœæ ‡é¢˜åˆ›å»ºä¸€ä¸ªUIå…ƒç´ 
+		foreach (var hotSearch in potentialHotSearches)
+		{
+			var hotSearchItem = Instantiate(hotSearchItemPrefab, hotSearchListParent);
+			hotSearchItem.GetComponent<Text>().text = hotSearch;
+			// æ·»åŠ ç‚¹å‡»äº‹ä»¶æˆ–æ‹–æ‹½äº‹ä»¶çš„ç›‘å¬ï¼Œè¿™é‡Œä»¥æŒ‰é’®ç‚¹å‡»ä¸ºä¾‹
+			//hotSearchItem.GetComponentInChildren<Button>().onClick.AddListener(() => SelectHotSearch(hotSearch));
+		}
+	}
 
-    // Íæ¼ÒÑ¡ÔñÒ»¸ö±êÌâÊ±µ÷ÓÃµÄ·½·¨
-    private void SelectHotSearch(string hotSearch)
-    {
-        if (!currentTopFiveHotSearches.Contains(hotSearch))
-        {
-            if (currentTopFiveHotSearches.Count < 5)
-            {
-                // Ìí¼Óµ½µ±Ç°ÈÈËÑ²¢¸üĞÂUI
-                currentTopFiveHotSearches.Add(hotSearch);
-                UpdateCurrentTopFiveUI();
-            }
-            else
-            {
-                Debug.Log("ÈÈËÑÁĞ±íÒÑÂú£¡");
-                // ¿ÉÒÔÌáÊ¾Íæ¼ÒĞèÒªÒÆ³ıÒ»¸öµ±Ç°µÄÈÈËÑ
-            }
-        }
-    }
+	// ç©å®¶é€‰æ‹©ä¸€ä¸ªæ ‡é¢˜æ—¶è°ƒç”¨çš„æ–¹æ³•
+	private void SelectHotSearch(string hotSearch)
+	{
+		if (!currentTopFiveHotSearches.Contains(hotSearch))
+		{
+			if (currentTopFiveHotSearches.Count < 5)
+			{
+				// æ·»åŠ åˆ°å½“å‰çƒ­æœå¹¶æ›´æ–°UI
+				currentTopFiveHotSearches.Add(hotSearch);
+				UpdateCurrentTopFiveUI();
+			}
+			else
+			{
+				Debug.Log("çƒ­æœåˆ—è¡¨å·²æ»¡ï¼");
+				// å¯ä»¥æç¤ºç©å®¶éœ€è¦ç§»é™¤ä¸€ä¸ªå½“å‰çš„çƒ­æœ
+			}
+		}
+	}
 
-    // ¸üĞÂµ±Ç°Top 5ÈÈËÑµÄUI
-    private void UpdateCurrentTopFiveUI()
-    {
-        // ÕâÀïÓ¦¸ÃÊÇ¸üĞÂÍæ¼ÒÒÑÑ¡ÔñµÄÇ°5ÈÈËÑµÄÂß¼­
-        // ÄãĞèÒªÒ»¸ö¶îÍâµÄUIÔªËØÀ´Õ¹Ê¾µ±Ç°µÄTop 5
-        // ...
-    }
+	// æ›´æ–°å½“å‰Top 5çƒ­æœçš„UI
+	private void UpdateCurrentTopFiveUI()
+	{
+		// è¿™é‡Œåº”è¯¥æ˜¯æ›´æ–°ç©å®¶å·²é€‰æ‹©çš„å‰5çƒ­æœçš„é€»è¾‘
+		// ä½ éœ€è¦ä¸€ä¸ªé¢å¤–çš„UIå…ƒç´ æ¥å±•ç¤ºå½“å‰çš„Top 5
+		// ...
+	}
 
-    // ÔÊĞíÍæ¼ÒÖØĞÂÅÅĞòÒÑ¾­Ñ¡ÔñµÄÈÈËÑ
-    public void SortHotSearch(string hotSearch, int newPosition)
-    {
-        if (currentTopFiveHotSearches.Contains(hotSearch))
-        {
-            // ÒÆ³ı¾ÉÎ»ÖÃÉÏµÄÈÈËÑ
-            currentTopFiveHotSearches.Remove(hotSearch);
-            // ²åÈëĞÂÎ»ÖÃ
-            currentTopFiveHotSearches.Insert(newPosition, hotSearch);
-            UpdateCurrentTopFiveUI();
-        }
-    }
+	// å…è®¸ç©å®¶é‡æ–°æ’åºå·²ç»é€‰æ‹©çš„çƒ­æœ
+	public void SortHotSearch(string hotSearch, int newPosition)
+	{
+		if (currentTopFiveHotSearches.Contains(hotSearch))
+		{
+			// ç§»é™¤æ—§ä½ç½®ä¸Šçš„çƒ­æœ
+			currentTopFiveHotSearches.Remove(hotSearch);
+			// æ’å…¥æ–°ä½ç½®
+			currentTopFiveHotSearches.Insert(newPosition, hotSearch);
+			UpdateCurrentTopFiveUI();
+		}
+	}
 }
