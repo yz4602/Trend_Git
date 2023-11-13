@@ -61,7 +61,7 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         // Snap the current image to the new position and update the dictionary
         rectTransform.anchoredPosition = newSnapPosition;
         itemSlotPositions[newSnapPosition] = gameObject;
-        imageInNewSlot = null;
+        //imageInNewSlot = null;
     }
 
 
