@@ -1172,7 +1172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0283c101594747047b7611275377c4af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rawNum: 4
+  rawNum: 5
   slotPrefab: {fileID: 5935510599928347111, guid: aefcf800bec0cba418ab292007c2e240, type: 3}
   slotBackgroundTrans: {fileID: 1483129143}
 --- !u!222 &1929742957

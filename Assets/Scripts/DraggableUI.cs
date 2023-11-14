@@ -8,6 +8,8 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     private Canvas canvas;
     private CanvasGroup canvasGroup;
 
+    public static Rect snapArea;
+
     public static List<Vector2> snapPositions = new List<Vector2>(); // List of snap positions
     public static Dictionary<Vector2, GameObject> itemSlotPositions = new Dictionary<Vector2, GameObject>();
 
@@ -36,34 +38,66 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     {
         canvasGroup.blocksRaycasts = true;
 
-        Vector2 newSnapPosition = FindClosestSnapPosition();
-        GameObject imageInNewSlot;
+        // Calculate the rectangle bounds of the RectTransform
+        Rect rectTransformBounds = GetRectTransformBounds(rectTransform);
 
-        Vector2 originalPosition = tempVector;
-        // Check if the new slot is occupied
-        if (itemSlotPositions.TryGetValue(newSnapPosition, out imageInNewSlot))
+        if (snapArea.Overlaps(rectTransformBounds))
         {
-            // Get the original position of the current image
-            
+            Vector2 newSnapPosition = FindClosestSnapPosition();
+            GameObject imageInNewSlot;
 
-            // Move the image in the new slot to the original position
-            imageInNewSlot.GetComponent<RectTransform>().anchoredPosition = originalPosition;
-            Debug.Log("image in new slot: " + imageInNewSlot.name);
-            // Update the dictionary
-            itemSlotPositions[originalPosition] = imageInNewSlot;
+            Vector2 originalPosition = tempVector;
+
+            if (itemSlotPositions.TryGetValue(newSnapPosition, out imageInNewSlot))
+            {
+                Debug.Log(imageInNewSlot.name);
+                imageInNewSlot.GetComponent<RectTransform>().anchoredPosition = originalPosition;
+                itemSlotPositions[originalPosition] = imageInNewSlot;
+            }
+            else
+            {
+                itemSlotPositions.Remove(originalPosition);
+            }
+
+            rectTransform.anchoredPosition = newSnapPosition;
+            itemSlotPositions[newSnapPosition] = gameObject;
         }
         else
         {
-            itemSlotPositions.Add(newSnapPosition, null);
-            itemSlotPositions.Remove(originalPosition);
+            // Optional: Reset to the original position or take another action
+            // rectTransform.anchoredPosition = tempVector;
+            itemSlotPositions.Remove(tempVector);
         }
 
-        // Snap the current image to the new position and update the dictionary
-        rectTransform.anchoredPosition = newSnapPosition;
-        itemSlotPositions[newSnapPosition] = gameObject;
-        //imageInNewSlot = null;
-    }
+        // Check if the item is within the snap area
+        //if (snapArea.Contains(rectTransform.anchoredPosition)) //TODO: ·¶Î§ÖØµþ
+        //{
+        //    Vector2 newSnapPosition = FindClosestSnapPosition();
+        //    GameObject imageInNewSlot;
 
+        //    Vector2 originalPosition = tempVector;
+
+        //    if (itemSlotPositions.TryGetValue(newSnapPosition, out imageInNewSlot))
+        //    {
+        //        Debug.Log(imageInNewSlot.name);
+        //        imageInNewSlot.GetComponent<RectTransform>().anchoredPosition = originalPosition;
+        //        itemSlotPositions[originalPosition] = imageInNewSlot;
+        //    }
+        //    else
+        //    {
+        //        itemSlotPositions.Remove(originalPosition);
+        //    }
+
+        //    rectTransform.anchoredPosition = newSnapPosition;
+        //    itemSlotPositions[newSnapPosition] = gameObject;
+        //}
+        //else
+        //{
+        //    // Optional: Reset to the original position or take another action
+        //    // rectTransform.anchoredPosition = tempVector;
+        //    itemSlotPositions.Remove(tempVector);
+        //}
+    }
 
     private Vector2 FindClosestSnapPosition()
     {
@@ -80,11 +114,50 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
             }
         }
 
-        if (!closest.Equals(Vector2.positiveInfinity))
-        {
-            rectTransform.anchoredPosition = closest;
-        }
-
         return closest;
     }
+
+    Rect GetRectTransformBounds(RectTransform rectTransform)
+    {
+        Vector2 size = rectTransform.sizeDelta;
+        Vector2 position = rectTransform.anchoredPosition;
+
+        // Calculate the min and max positions
+        float xMin = position.x - size.x * rectTransform.pivot.x;
+        float xMax = position.x + size.x * (1 - rectTransform.pivot.x);
+        float yMin = position.y - size.y * rectTransform.pivot.y;
+        float yMax = position.y + size.y * (1 - rectTransform.pivot.y);
+
+        return new Rect(xMin, yMin, xMax - xMin, yMax - yMin);
+    }
+
+    void OnDrawGizmos()
+    {
+        if (canvas == null)
+            return;
+
+        // Set the color of the Gizmo
+        Gizmos.color = Color.green;
+
+        // Convert the snapArea from Rect to world space
+        Vector3[] worldCorners = new Vector3[4];
+        Vector3 size = new Vector3(snapArea.width, snapArea.height, 0);
+        Vector3 center = new Vector3(snapArea.x + snapArea.width / 2, snapArea.y + snapArea.height / 2, 0);
+
+        // Transform center from local to world space
+        center = canvas.transform.TransformPoint(center);
+
+        // Get the world corners of the rectangle
+        worldCorners[0] = canvas.transform.TransformPoint(new Vector3(snapArea.xMin, snapArea.yMin, 0));
+        worldCorners[1] = canvas.transform.TransformPoint(new Vector3(snapArea.xMax, snapArea.yMin, 0));
+        worldCorners[2] = canvas.transform.TransformPoint(new Vector3(snapArea.xMax, snapArea.yMax, 0));
+        worldCorners[3] = canvas.transform.TransformPoint(new Vector3(snapArea.xMin, snapArea.yMax, 0));
+
+        // Draw the rectangle
+        Gizmos.DrawLine(worldCorners[0], worldCorners[1]);
+        Gizmos.DrawLine(worldCorners[1], worldCorners[2]);
+        Gizmos.DrawLine(worldCorners[2], worldCorners[3]);
+        Gizmos.DrawLine(worldCorners[3], worldCorners[0]);
+    }
+
 }

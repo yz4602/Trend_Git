@@ -12,7 +12,7 @@ public class GenerateSlots : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		if(slotBackgroundTrans) slotBackgroundTrans.anchoredPosition = 
+		if (slotBackgroundTrans) slotBackgroundTrans.anchoredPosition = 
 		new Vector2(slotBackgroundTrans.anchoredPosition.x, rawNum % 2 == 1 ? 0 : -50);
 
 		for(int i = 0; i < rawNum; i++)
@@ -27,9 +27,13 @@ public class GenerateSlots : MonoBehaviour
 				slotBackgroundTrans.sizeDelta = new Vector2(slotBackgroundTrans.sizeDelta.x, 
 															slotBackgroundTrans.sizeDelta.y + 100f);
 			}
-			
 			DraggableUI.snapPositions.Add(go.GetComponent<RectTransform>().anchoredPosition + 
 										  this.GetComponent<RectTransform>().anchoredPosition);
 		}
+
+		DraggableUI.snapArea.width = slotBackgroundTrans.sizeDelta.x;
+		DraggableUI.snapArea.height = slotBackgroundTrans.sizeDelta.y;
+		DraggableUI.snapArea.x = GetComponent<RectTransform>().anchoredPosition.x - DraggableUI.snapArea.width/2;
+		DraggableUI.snapArea.y = GetComponent<RectTransform>().anchoredPosition.y - DraggableUI.snapArea.height/2;
 	}
 }
