@@ -12,7 +12,8 @@ public class GenerateEventLists : MonoBehaviour
 	public RectTransform eventPosition;
 	public int eventNumber;
 	private ExcelReader excelReader;
-	private static Dictionary<string, List<string>> eventDictionary = new Dictionary<string, List<string>>();
+	public static Dictionary<string, List<string>> eventDictionary = new Dictionary<string, List<string>>();
+	public static Dictionary<string, string> tempEventDictionary = new Dictionary<string, string>();
 	private List<string> currentList;
 	private List<string> keyList = new List<string>();
 	
@@ -63,11 +64,13 @@ public class GenerateEventLists : MonoBehaviour
 			if(i < keyList.Count)
 			{	//TODO:新闻出现的逻辑；更随机的位置；优化：字典value改成队列或者是链表(性能) Random position; queue/linkedList
 				eventItem.GetComponentInChildren<Text>().text = eventDictionary[keyList[i]][0];
+				tempEventDictionary.Add(eventDictionary[keyList[i]][0], keyList[i]);
 				eventDictionary[keyList[i]].RemoveAt(0);
 			}
 			else if(eventDictionary["R"].Count >= 1)
 			{
 				eventItem.GetComponentInChildren<Text>().text = eventDictionary["R"][0];
+				tempEventDictionary.Add(eventDictionary["R"][0], "R");
 				eventDictionary["R"].RemoveAt(0);
 			}
 			else

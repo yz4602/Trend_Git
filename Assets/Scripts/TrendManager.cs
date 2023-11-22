@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TrendManager : MonoBehaviour
 {
 	public List<String> trendListToday;
-	public static List<TrendLV> trendListAll;
+	public List<TrendLV> trendListAll = new List<TrendLV>(); //static
 
 	public void UpdateTrendList()
 	{
@@ -29,21 +29,54 @@ public class TrendManager : MonoBehaviour
 				}
 			}
 			newV2Dict.Add(headVector2, v2Dict[headVector2]);
-			trendListToday.Add(DraggableUI.itemSlotPositions[headVector2].transform.GetComponentInChildren<Text>().text);
-			//TODO:get event group 加值
+			string eventContent = DraggableUI.itemSlotPositions[headVector2].transform.GetComponentInChildren<Text>().text;
+			trendListToday.Add(eventContent);
 			
 			v2Dict.Remove(headVector2);
+			
+			//TODO:get event group 加值 ；如果trendListAll有则加值，如果没有则新建加值
+			string eventGroupName = GenerateEventLists.tempEventDictionary[eventContent];
+			// if(eventGroupName != null) GenerateEventLists.eventDictionary[eventGroupName].RemoveAt(0);//不是error 游戏逻辑里不会重复出现同样的event
+			
+			if(trendListAll.Count == 0)
+			{
+				trendListAll.Add(new TrendLV(eventGroupName, listCount - i)); Debug.Log("First Add");
+			}
+			else
+			{
+				TrendLV targetTrend = new TrendLV("null",-1);
+				foreach(TrendLV trendLV in trendListAll)
+				{
+					if(trendLV.eventGroup == eventGroupName)
+					{
+						targetTrend = trendLV;
+					}
+				}
+				if(targetTrend.eventGroup != "null")
+				{
+					targetTrend.trendValue += listCount - i;
+				}
+				else
+				{
+					trendListAll.Add(new TrendLV(eventGroupName,listCount - i));
+				}				
+			}	
 		}
+		
+		foreach(TrendLV trendLV1 in trendListAll)
+		{
+			if(trendLV1.eventGroup == "R")
+			{
+				trendListAll.Remove(trendLV1);	
+				break;
+			}
+		}
+		
 		DraggableUI.itemSlotPositions = newV2Dict;
 	}
-	
-	private void calculateTrendValue(TrendLV trendLV, int addValue)
-	{
-		trendLV.trendValue += addValue;
-	}
-	
 }
 
+[Serializable]
 public class TrendLV : IComparable<TrendLV>
 {
 	public string eventGroup;
