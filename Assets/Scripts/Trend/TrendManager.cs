@@ -51,7 +51,6 @@ public class TrendManager : MonoBehaviour
 					headVector2 = v2;
 				}
 			}
-			Debug.Log(headVector2);
 			newV2Dict.Add(headVector2, v2Dict[headVector2]);
 			//Debug.Log("listCount " + listCount + "  " + (DraggableUI.itemSlotPositions[headVector2] == null).ToString());
 			string eventContent = DraggableUI.itemSlotPositions[headVector2].transform.GetComponentInChildren<Text>().text;
@@ -69,7 +68,7 @@ public class TrendManager : MonoBehaviour
 			
 			if(trendListAll.Count == 0)
 			{
-				trendListAll.Add(new TrendLV(eventGroupName, listCount - i)); Debug.Log("First Add");
+				trendListAll.Add(new TrendLV(eventGroupName, listCount - i));
 			}
 			else
 			{
