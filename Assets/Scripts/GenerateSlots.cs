@@ -12,6 +12,11 @@ public class GenerateSlots : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		GenerateSlot();
+	}
+	
+	public void GenerateSlot()
+	{
 		if (slotBackgroundTrans) slotBackgroundTrans.anchoredPosition = 
 		new Vector2(slotBackgroundTrans.anchoredPosition.x, rawNum % 2 == 1 ? 0 : -50);
 

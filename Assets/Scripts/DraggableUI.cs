@@ -12,6 +12,7 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 
 	public static List<Vector2> snapPositions = new List<Vector2>(); // List of snap positions
 	public static Dictionary<Vector2, GameObject> itemSlotPositions = new Dictionary<Vector2, GameObject>();
+	public static int numOfTrendInArea;
 
 	private Vector2 tempVector;
 
@@ -50,12 +51,24 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 
 			if (itemSlotPositions.TryGetValue(newSnapPosition, out imageInNewSlot))
 			{
-				Debug.Log(imageInNewSlot.name);
-				imageInNewSlot.GetComponent<RectTransform>().anchoredPosition = originalPosition;
-				itemSlotPositions[originalPosition] = imageInNewSlot;
+				if (imageInNewSlot != null)
+				{
+					Debug.Log("nn " + imageInNewSlot.name);
+					imageInNewSlot.GetComponent<RectTransform>().anchoredPosition = originalPosition;
+					itemSlotPositions[originalPosition] = imageInNewSlot;
+					//itemSlotPositions.Remove(originalPosition);
+				}
+				else
+				{
+					numOfTrendInArea++;
+					//Debug.Log("numOfTrendInArea: " + numOfTrendInArea);
+					itemSlotPositions.Remove(originalPosition);
+				}
 			}
 			else
 			{
+				numOfTrendInArea++;//FIXME: numOfTrendInArea
+				Debug.Log("numOfTrendInArea: " + numOfTrendInArea);
 				itemSlotPositions.Remove(originalPosition);
 			}
 
@@ -66,6 +79,11 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 		{
 			// Optional: Reset to the original position or take another action
 			// rectTransform.anchoredPosition = tempVector;
+			if(snapArea.Contains(tempVector))
+			{
+				numOfTrendInArea--;
+				Debug.Log("numOfTrendInArea: " + numOfTrendInArea);
+			}
 			itemSlotPositions.Remove(tempVector);
 		}
 	}

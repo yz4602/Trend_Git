@@ -10,11 +10,34 @@ public class TrendManager : MonoBehaviour
 
 	public void UpdateTrendList()
 	{
+		DeleteSpareV2(DraggableUI.itemSlotPositions);
 		SortV2Dictionary(DraggableUI.itemSlotPositions);
+		RemoveTheKeyNotSelected();
+		DraggableUI.numOfTrendInArea = 0;
+		GetComponent<DictInspector>().UpdateInspector();
+	}
+
+	//Remove the original position left in itemSlotPositions which will cause error
+	private void DeleteSpareV2(Dictionary<Vector2, GameObject> v2Dict)
+	{
+		List<Vector2> keysToRemove = new List<Vector2>();
+		foreach (Vector2 v2 in v2Dict.Keys)
+		{
+			if (!DraggableUI.snapPositions.Contains(v2))
+			{
+				keysToRemove.Add(v2);
+			}
+		}
+		
+		foreach (Vector2 key in keysToRemove)
+		{
+			v2Dict.Remove(key);
+		}
 	}
 
 	private void SortV2Dictionary(Dictionary<Vector2, GameObject> v2Dict)
 	{
+		trendListToday.Clear();
 		Vector2 headVector2;
 		Dictionary<Vector2, GameObject> newV2Dict = new Dictionary<Vector2, GameObject>();
 		int listCount = v2Dict.Count;
@@ -28,14 +51,20 @@ public class TrendManager : MonoBehaviour
 					headVector2 = v2;
 				}
 			}
+			Debug.Log(headVector2);
 			newV2Dict.Add(headVector2, v2Dict[headVector2]);
+			//Debug.Log("listCount " + listCount + "  " + (DraggableUI.itemSlotPositions[headVector2] == null).ToString());
 			string eventContent = DraggableUI.itemSlotPositions[headVector2].transform.GetComponentInChildren<Text>().text;
 			trendListToday.Add(eventContent);
 			
 			v2Dict.Remove(headVector2);
 			
-			//TODO:get event group 加值 ；如果trendListAll有则加值，如果没有则新建加值
+			//FIXME:可能错误
+			// string eventGroupName = null;
+			// if(GenerateEventLists.tempEventDictionary.ContainsKey(eventContent)) 
+			// 	eventGroupName = GenerateEventLists.tempEventDictionary[eventContent];
 			string eventGroupName = GenerateEventLists.tempEventDictionary[eventContent];
+			GenerateEventLists.tempEventDictionary.Remove(eventContent);
 			// if(eventGroupName != null) GenerateEventLists.eventDictionary[eventGroupName].RemoveAt(0);//不是error 游戏逻辑里不会重复出现同样的event
 			
 			if(trendListAll.Count == 0)
@@ -73,6 +102,19 @@ public class TrendManager : MonoBehaviour
 		}
 		
 		DraggableUI.itemSlotPositions = newV2Dict;
+	}
+	
+	private void RemoveTheKeyNotSelected()
+	{
+		foreach(string groupName in GenerateEventLists.tempEventDictionary.Values)
+		{
+			Debug.Log("Delete Group: " + groupName);
+			if(groupName != "R")
+			{
+				GenerateEventLists.eventDictionary.Remove(groupName);
+			}
+			//TODO:增加未完成导致的event到R组
+		}
 	}
 }
 
