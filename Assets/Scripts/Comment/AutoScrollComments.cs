@@ -37,21 +37,21 @@ public class AutoScrollComments : MonoBehaviour
 		if (commentObjects.Count > 0)
 		{
 			RectTransform rectTransform = commentObjects[0].GetComponent<RectTransform>();
-			commentHeight = rectTransform.rect.height + GetComponent<VerticalLayoutGroup>().preferredHeight; //FIXME:位置不对
-			Debug.Log(GetComponent<VerticalLayoutGroup>().preferredHeight);
+			commentHeight = rectTransform.rect.height; //FIXME:位置不对
+			Debug.Log(commentHeight);
 		}
 	}
 
 	void Update()
 	{
-		float resetPositionY = -commentHeight * (commentObjects.Count - 1); 
+		float resetPositionY = -commentHeight * commentObjects.Count; 
 		foreach (GameObject comment in commentObjects)
 		{
 			// Move comment upwards
 			comment.transform.Translate(Vector3.up * scrollSpeed * Time.deltaTime);
 
 			// Check if the comment is out of view, then reset its position
-			if (comment.transform.localPosition.y > 5)
+			if (comment.transform.localPosition.y > 0)
 			{
 				Vector3 newPos = comment.transform.localPosition;
 				newPos.y = resetPositionY;
