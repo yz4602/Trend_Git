@@ -119,6 +119,7 @@ public class GenerateEventLists : MonoBehaviour
 
 		// Now shuffle the keyList
 		ShuffleList(keyListAll);
+		ShuffleKeyList(keyListAll);
 	}
 	
 	private void ShuffleList(List<string> list)
@@ -135,7 +136,28 @@ public class GenerateEventLists : MonoBehaviour
 			list[n] = value;
 		}
 	}
-	
+
+	private void ShuffleKeyList(List<string> list)
+	{
+		List<TrendLV> trendListAll = GetComponent<TrendManager>().trendListAll;
+		int minus = 0;
+		for(int i = 0; i  < trendListAll.Count; i++)
+        {
+			if (!eventDictionary.ContainsKey(trendListAll[i].eventGroup)) { minus++; continue; }
+			string value = list[i - minus];
+			int indexOfBig = list.IndexOf(trendListAll[i].eventGroup);
+			list[i - minus] = list[indexOfBig];
+			list[indexOfBig] = value;
+        }
+
+		string subValue = list[eventNumber - 1];
+        int RIndex = list.IndexOf("R");
+		list[eventNumber - 1] = list[RIndex];
+		list[RIndex] = subValue;
+		Debug.Log((eventNumber - 1) + " : " + list[5]);
+	}
+
+
 	public Dictionary<string, List<string>> GetEventDict()
 	{
 		return eventDictionary;

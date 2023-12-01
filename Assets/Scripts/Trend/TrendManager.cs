@@ -99,7 +99,9 @@ public class TrendManager : MonoBehaviour
 				break;
 			}
 		}
-		
+
+		trendListAll.Sort();
+		trendListAll.Reverse(); //From largest to lowest
 		DraggableUI.itemSlotPositions = newV2Dict;
 	}
 	
@@ -115,6 +117,18 @@ public class TrendManager : MonoBehaviour
 			//TODO:增加未完成导致的event到R组
 		}
 	}
+
+	//private TrendLV GetTrendLVFromString(List<TrendLV> list, string str)
+ //   {
+	//	foreach(TrendLV trendLV in list)
+ //       {
+	//		if(trendLV.eventGroup == str)
+ //           {
+	//			return trendLV;
+ //           }
+ //       }
+	//	return null;
+ //   }
 }
 
 [Serializable]
