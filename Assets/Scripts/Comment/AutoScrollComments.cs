@@ -29,7 +29,8 @@ public class AutoScrollComments : MonoBehaviour
 		foreach (string comment in commentsList)
 		{
 			GameObject newComment = Instantiate(commentPrefab, transform);
-			newComment.GetComponent<Text>().text = comment;
+			newComment.GetComponentInChildren<Text>().text = comment;
+			AdjustWidth(newComment.GetComponent<RectTransform>());
 			commentObjects.Add(newComment);
 		}
 
@@ -62,6 +63,18 @@ public class AutoScrollComments : MonoBehaviour
 				commentObjects.Add(comment); 
 				break; // Break the loop to avoid modifying the collection during iteration
 			}
+		}
+	}
+	
+	void AdjustWidth(RectTransform rectTransform)
+	{
+		Text uiText = rectTransform.GetComponentInChildren<Text>();
+		if (uiText != null && rectTransform != null)
+		{
+			float textWidth = LayoutUtility.GetPreferredWidth(uiText.rectTransform);
+			uiText.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, textWidth);
+			uiText.rectTransform.localPosition = new Vector3(0,0,0);
+			rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, textWidth + 30f); //Adjust the comment's padding here 
 		}
 	}
 

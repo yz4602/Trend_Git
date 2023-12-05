@@ -11,7 +11,7 @@ public class ExcelReader : MonoBehaviour
 	
 	private void Start()
 	{
-		string filePath = Path.Combine(Application.streamingAssetsPath, "test.xlsx");
+		string filePath = Path.Combine(Application.streamingAssetsPath, "TrendingEvents.xlsx");
 		ReadExcelFile(filePath); 
 	}
 

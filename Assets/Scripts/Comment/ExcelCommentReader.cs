@@ -11,7 +11,7 @@ public class ExcelCommentReader : MonoBehaviour
 	
 	private void Start()
 	{
-		string filePath = Path.Combine(Application.streamingAssetsPath, "comment.xlsx");
+		string filePath = Path.Combine(Application.streamingAssetsPath, "TrendsReactions.xlsx");
 		ReadExcelFile(filePath); 
 	}
 
