@@ -17,9 +17,9 @@ public class ShowEndScene : MonoBehaviour
 		images[2] = transform.GetChild(3).GetComponent<Image>();
 		imagesShow = new bool[3]{false, false, false};	
 		
-		float societyValue = changeBarsValue.SocietyBar.size * 100f + changeBarsValue.tempSociety;
-		float ReputationValue = changeBarsValue.ReputationBar.size * 100f + changeBarsValue.tempReputation;
-		float WealthValue = changeBarsValue.WealthBar.size * 100f + changeBarsValue.tempWealth;
+		float societyValue = changeBarsValue.SocietyBar.size * 100f;
+		float ReputationValue = changeBarsValue.ReputationBar.size * 100f;
+		float WealthValue = changeBarsValue.WealthBar.size * 100f;
 		
 		if(societyValue > 66)
 		{

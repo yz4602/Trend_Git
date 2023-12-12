@@ -32,7 +32,7 @@ public class IntervalBossDialogue : MonoBehaviour
 				// Check if the key already exists to avoid duplicates
 				if (!otherDict.ContainsKey(key))
 				{
-					otherDict.Add(key,""); Debug.Log("Add key: " + key);
+					otherDict.Add(key,"");
 					currentKey = key;
 				}
 				continue;

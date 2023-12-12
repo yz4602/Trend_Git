@@ -7,13 +7,17 @@ public class RunInterval : MonoBehaviour
 {
 	public PlayableDirector director;
 	public IntervalBossDialogue intervalBossDialogue;
+	public ChangeBarsValue changeBarsValue;
 	public GameObject endCanvas;
+	public Canvas commentCanvas;
 	
 	private void OnEnable() 
 	{
 		if(intervalBossDialogue.GetDay() >= 5)
 		{
-			Invoke("ActivateEnd", 0.85f);	
+			commentCanvas.sortingOrder = 6;
+			changeBarsValue.ChangeBarValue();
+			Invoke("ActivateEnd", 2f);	
 		}
 		else
 		{

@@ -38,7 +38,7 @@ public class ChangeBarsValue : MonoBehaviour
 	
 	private IEnumerator ChangeValue()
 	{
-		for(int i = 0; i < 200; i++)
+		for(int i = 0; i < 180; i++)
 		{
 			SocietyBar.size += tempSociety/20000f;
 			ReputationBar.size += tempReputation/20000f;
