@@ -12,12 +12,14 @@ public class GenerateEventLists : MonoBehaviour
 	public RectTransform eventPosition;
 	public int eventNumber;
 	private ExcelReader excelReader;
-	public static Dictionary<string, List<string>> eventDictionary = new Dictionary<string, List<string>>();
-	public static Dictionary<string, string> tempEventDictionary = new Dictionary<string, string>();
+	public static Dictionary<string, List<string>> eventDictionary;
+	public static Dictionary<string, string> tempEventDictionary;
 	private static List<string> keyListAll = new List<string>();
 	
 	private void Awake() 
 	{
+		eventDictionary = new Dictionary<string, List<string>>();
+		tempEventDictionary = new Dictionary<string, string>();
 		excelReader = GetComponent<ExcelReader>();
 	}
 	
@@ -30,7 +32,7 @@ public class GenerateEventLists : MonoBehaviour
 	
 	private void OrganizeEventDict()
 	{
-		List<string> currentList = null;
+		List<string> currentList = new List<string>();
 		foreach(string str in excelReader.excelContentList)
 		{
 			if(str.Contains("#"))
@@ -59,8 +61,10 @@ public class GenerateEventLists : MonoBehaviour
 			eventItem.transform.SetParent(eventParent);
 			eventItem.GetComponent<DraggableUI>().SetCanvas(eventParent.GetComponentInParent<Canvas>());
 			RectTransform rectTransform = eventItem.GetComponent<RectTransform>();
+			int randomXValue = i > 1 ? 250 : 5;
 			rectTransform.anchoredPosition3D = eventPosition.anchoredPosition3D 
-											   - new Vector3(Random.Range(-350, 200), i*100 + Random.Range(-20, 20), 0);
+											   - new Vector3(Random.Range(-25, randomXValue), i*110 + Random.Range(-10, 30), 0);
+											   
 			rectTransform.localScale = new Vector3(1,1,1);
 			if(i < keyListAll.Count)
 			{	//TODO:新闻出现的逻辑；更随机的位置；优化：字典value改成队列或者是链表(性能) Random position; queue/linkedList
@@ -105,7 +109,7 @@ public class GenerateEventLists : MonoBehaviour
 		{
 			Destroy(eventParent.GetChild(i).gameObject);
 		}
-		Invoke("GenerateEvents", 1f);
+		Invoke("GenerateEvents", 0.8f);
 	}
 	
 	private void ResetKeyListAll()
@@ -142,16 +146,16 @@ public class GenerateEventLists : MonoBehaviour
 		List<TrendLV> trendListAll = GetComponent<TrendManager>().trendListAll;
 		int minus = 0;
 		for(int i = 0; i  < trendListAll.Count; i++)
-        {
+		{
 			if (!eventDictionary.ContainsKey(trendListAll[i].eventGroup)) { minus++; continue; }
 			string value = list[i - minus];
 			int indexOfBig = list.IndexOf(trendListAll[i].eventGroup);
 			list[i - minus] = list[indexOfBig];
 			list[indexOfBig] = value;
-        }
+		}
 
 		string subValue = list[eventNumber - 1];
-        int RIndex = list.IndexOf("R");
+		int RIndex = list.IndexOf("R");
 		list[eventNumber - 1] = list[RIndex];
 		list[RIndex] = subValue;
 		Debug.Log((eventNumber - 1) + " : " + list[5]);

@@ -39,7 +39,7 @@ public class AutoScrollComments : MonoBehaviour
 		{
 			RectTransform rectTransform = commentObjects[0].GetComponent<RectTransform>();
 			commentHeight = rectTransform.rect.height; //FIXME:位置不对
-			Debug.Log(commentHeight);
+			//Debug.Log(commentHeight);
 		}
 	}
 

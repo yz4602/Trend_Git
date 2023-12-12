@@ -58,7 +58,6 @@ public class TrendManager : MonoBehaviour
 			
 			v2Dict.Remove(headVector2);
 			
-			//FIXME:可能错误
 			// string eventGroupName = null;
 			// if(GenerateEventLists.tempEventDictionary.ContainsKey(eventContent)) 
 			// 	eventGroupName = GenerateEventLists.tempEventDictionary[eventContent];
