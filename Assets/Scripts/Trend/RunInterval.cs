@@ -5,6 +5,7 @@ using UnityEngine.Playables;
 
 public class RunInterval : MonoBehaviour
 {
+	[Range(0,5)] public int totalDay = 5;
 	public PlayableDirector director;
 	public IntervalBossDialogue intervalBossDialogue;
 	public ChangeBarsValue changeBarsValue;
@@ -13,7 +14,7 @@ public class RunInterval : MonoBehaviour
 	
 	private void OnEnable() 
 	{
-		if(intervalBossDialogue.GetDay() >= 5)
+		if(intervalBossDialogue.GetDay() >= totalDay)
 		{
 			commentCanvas.sortingOrder = 6;
 			changeBarsValue.ChangeBarValue();
