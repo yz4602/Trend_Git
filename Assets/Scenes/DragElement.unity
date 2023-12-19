@@ -361,6 +361,7 @@ MonoBehaviour:
   eventParent: {fileID: 686739766}
   eventPosition: {fileID: 1575088054}
   eventNumber: 7
+  ContentForWebGL: {fileID: 822031891}
 --- !u!114 &142201229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1549,7 +1550,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1330191665}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1804,7 +1805,7 @@ RectTransform:
   m_Children:
   - {fileID: 74302371}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1904,7 +1905,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1330191665}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2285,7 +2286,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1330191665}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -0.145, y: -0.355, z: 45.99}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2652,6 +2653,8 @@ PlayableDirector:
     value: {fileID: 1330191661}
   - key: {fileID: -3579487741451199057, guid: ac07df9e84c681f41887d62dac490a07, type: 2}
     value: {fileID: 1216707579}
+  - key: {fileID: 4466570543399855877, guid: ac07df9e84c681f41887d62dac490a07, type: 2}
+    value: {fileID: 963044172}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &706078202
@@ -2696,8 +2699,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossText: {fileID: 775369056}
   weekText: {fileID: 1569235767}
-  excelOtherReader: {fileID: 706078203}
   changeBarsValue: {fileID: 1216707578}
+  ContentForWebGL: {fileID: 822031891}
 --- !u!1 &775306163
 GameObject:
   m_ObjectHideFlags: 0
@@ -3031,6 +3034,771 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &822031891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 822031895}
+  - component: {fileID: 822031894}
+  - component: {fileID: 822031893}
+  - component: {fileID: 822031892}
+  m_Layer: 0
+  m_Name: TextForWebGL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &822031892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822031891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f5fb5367cda995498ffed8121be86f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  excelCommentList:
+  - '#It was rumored on the Internet that a man secretly photographed a female college
+    student in the subway'
+  - -5,5,5
+  - Asshole
+  - So mean!
+  - Hentai!
+  - Men~
+  - Gross
+  - Die!
+  - Damn
+  - '#The women speak out against men online, demanding for apology'
+  - -5,-5,5
+  - Go sister!
+  - Disgusting men!
+  - Women rise!
+  - GOGOGO!
+  - Proofs?
+  - Go For it!
+  - Really
+  - '#Surveillance footage confirms that the man did not take a clandestine photo'
+  - 5,-15,-5
+  - What?
+  - 'Unbeliveable '
+  - Little Fairy
+  - I knew it!
+  - Gosh
+  - Jesus
+  - Kidding me
+  - '#Woman refuse to apologisze to the man'
+  - -5,5,5
+  - Lol women
+  - That's right!
+  - Amazing!
+  - hahaha
+  - lmao
+  - T0
+  - Women always right
+  - '#A pink-haried girl posted a selfie with her sick grandpa in bed'
+  - 0,-5,-5
+  - Disrespect!
+  - What the hell
+  - Nonsense!
+  - Grandpa is crying
+  - Jesus
+  - Fairy
+  - Gosh
+  - '#Many people cyberbulleying the girl as they interpreting the selfie is disrespectful'
+  - -5,0,5
+  - Good job!
+  - She deserves it!
+  - Teenager
+  - That's not nice
+  - Why?
+  - So mean
+  - I feel sorry
+  - '#The pink-haired girl committed suicide after cyberbullying'
+  - -10,10,5
+  - ???
+  - What?
+  - Oh my god!
+  - You guys are criminal!
+  - Poor girl
+  - R.I.P
+  - RIP
+  - '#Message leaked that the selfie was taken by the request of her grandpa'
+  - 15,10,5
+  - "Oh no\u2026"
+  - I feel sorry for her
+  - 'Why are people so mean '
+  - R.I.P
+  - "No\u2026"
+  - Sorry
+  - '#A rat head was found in the a meal provided by school '
+  - -5,5,5
+  - Gross
+  - Disgusting!
+  - Eww
+  - What the heck
+  - '#FoodSafety'
+  - Jesus
+  - Poor Students
+  - '#The shool announced that it was duck neck instead of rat head'
+  - -10,5,0
+  - LOL
+  - Rat-shaped duck
+  - Amazing!
+  - Classic
+  - haha
+  - Farming advancement!
+  - I want to try some
+  - '#Official steps in to open an investigation about the issue'
+  - 10,5,0
+  - Let's find out
+  - Great!
+  - Probably just fake investigation
+  - I don't trust them
+  - Fine them!
+  - Suspend them!
+  - '#The investigation shown that it was rat head, and the school was fined and
+    suspend business for rectification'
+  - 15,10,5
+  - hahaha
+  - Deserve it!
+  - Good job!
+  - lmao
+  - trash school
+  - Fine them to broke!
+  - '#A foreign president has arrived at New York for visiting'
+  - 5,5,0
+  - Welcome!
+  - Go away!
+  - Dictator!
+  - Long live the friendship
+  - Good news!
+  - Cooperation and prosper!
+  - '#It was reported the city mayor had cleaned up the trash, tramps, and homelesses
+    to welcome the guest before arrival'
+  - -8,10,10
+  - WTF!
+  - lol
+  - LMAO!
+  - Now we know who's the boss!
+  - Traitor!
+  - No! MAGA!
+  - '#People are furious on internet and blaming the mayor has no dignity.'
+  - -5,5,0
+  - It's not nice
+  - Joker
+  - he rules you, they rule him!
+  - MAGA!
+  - Democrats
+  - Clown
+  - '#The mayor declared to run for the president for next election '
+  - -5,5,0
+  - I knew it
+  - That's why
+  - as*hole
+  - haha, democrats
+  - Let's go New Yorker!
+  - Clown
+  - '#An electric car accident occurred, the driver claimed that the brake was not
+    working '
+  - -5,0,0
+  - Suspend the car!
+  - Worst car ever!
+  - Never buy this car brand again!
+  - "I have same experience\u2026"
+  - Trash car
+  - Poor quality car!
+  - '#Netizens critcize the manufacturer for the quality of the car'
+  - -5,5,0
+  - Let's go!!!
+  - Trash company!
+  - Never buy from them!
+  - Companies nowadays..
+  - No morality
+  - Consumers are god!
+  - '#Third party quality control organizations investigate the case'
+  - 10,5,5
+  - Let's find out the truth
+  - GoGoGo
+  - Is the tester legit?
+  - The company may bribe the testers
+  - Prove that the company sucks!
+  - hmm, electric car
+  - '#The report showned that there was nothing wrong with the brake, and the driver
+    was making false claims'
+  - 10,-5,-5
+  - I knew it!
+  - 'The company must have bribed! '
+  - Retest!
+  - People nowadays~
+  - Probably women driver
+  - Now who's the liar
+  - '#BMW sales only offering ice cream to foreigners at an exhibition'
+  - -10,5,5
+  - That's unfair
+  - I'll never buy BMW again
+  - Locals has no right
+  - Classic
+  - Dogs of foreigners
+  - Classic BMW move
+  - '#BMW Stock value decreases by 8%'
+  - 5,0,0
+  - Go away BMW!
+  - Suspend BMW!
+  - BMW dogs don't buy
+  - Can I exchange bmw with ice cream?
+  - Let's go Audi!
+  - Never more~
+  - '#BMW announced that it will provide ice cream to everyone next day '
+  - 5,5,5
+  - Too late to apologize~
+  - F*ck BMW
+  - Classic BMW PR
+  - Lol
+  - Internet always forget
+  - I want two!
+  - '#The president claimed that the newly discovered virus COVID-2099 will disapper
+    soon, just like a miracle'
+  - 10,10,5
+  - MAGA!
+  - Fuck COVID!
+  - He always know!
+  - What an idiot!
+  - Drink bleach to cure!
+  - What a joke!
+  - '#H1 The number of death caused by COVID-2099 reached 320,200'
+  - -5,-5,0
+  - R.I.P
+  - Will go away soon
+  - Miracle is coming!
+  - We should stay at home!
+  - Take care everyone!
+  - Be safe!
+  - '#H2 The number of death caused by COVID-2099 reached 420,200'
+  - -10,-10,-5
+  - R.I.P
+  - Where's miracle
+  - I thought it will be gone in summer
+  - Oh no
+  - Stay safe
+  - President is a joke
+  - '#H3 The number of death caused by COVID-2099 reached 600,200'
+  - -10,-10,-10
+  - When will this end?
+  - R.I.P
+  - 'Hopelss '
+  - Where's president?
+  - Oh no~
+  - what a joke
+  - '#Amber Herd claimed actor Johnny Dep abused her physically, asking for divorce'
+  - -10,5,5
+  - Lets's go sister!
+  - Men~
+  - Ewww
+  - OMG
+  - Can't belive Dep is someone like this
+  - Scrum!
+  - '#Dep denied such accuse and claim such accuse hurt his reputation'
+  - -5,5,0
+  - He's lying!
+  - Lie!
+  - Don't trust him, sisters
+  - lol quick deny
+  - wait and see the truth
+  - Will never watch the he stars anymore
+  - '#The judge determined the accuse of Herd is false and require compensatory for
+    Dep'
+  - 5,-15,-5
+  - I knew it!
+  - What?
+  - Dep was right!
+  - Don't be upset Amber!
+  - Stay with you, sister!
+  - lmao
+  - '#Elen Musk posted on twitter: "Dodge to the moon!"'
+  - 10,10,10
+  - Elen!
+  - To the Moon!
+  - Buy Buy Buy!
+  - I invested 10 million
+  - Clown
+  - What is dodge?
+  - '#Dodge Coin priced rises more than 800%'
+  - 5,5,10
+  - Hooray!
+  - I made $99000
+  - Thank you Elen!
+  - I'll buy more!
+  - To the moon!
+  - Gotta Buy?
+  - '#Elen Musk posted on twitter: "Dodge coin price is too high righet now!"'
+  - -5,-5,-5
+  - '?'
+  - Belive you Elen!
+  - What?
+  - What about the moon?
+  - No, not yet!
+  - Elen the goat!
+  - '#Dodge Coin price decrease for more than 300%'
+  - -10,-10,-10
+  - No!!
+  - My money!
+  - Thank you Elen!
+  - Dodge to the hell!
+  - goat!
+  - You as*hole!
+  - '#A chemical train crashed exploded in ohaio, causing 12 deaths.'
+  - -15,10,0
+  - R.I.P
+  - Poor Ohaians
+  - Hope not causing too much financial lost
+  - Who's responsibility?
+  - How did this happened?
+  - Trash railroad
+  - '#Experts said the pollution could affect people continually in next 10 years'
+  - -5,5,5
+  - What?
+  - I'm moving out!
+  - This expert is fake
+  - This expert is quite authoritative
+  - I demand compensation!
+  - How to fix it?
+  - '#Residents have been evacuated from the town near the explosion'
+  - -5,5,5
+  - Poor Ohairian
+  - What a suffer
+  - How long can they move back?
+  - Is it covered by insurance?
+  - Hope everyone is fine
+  - Will government pay for it?
+  - '#Officals say the pollution will be gone in no time'
+  - -10,-15,-10
+  - MAGA!
+  - Lie!
+  - Politicians are liars
+  - 'Classic '
+  - Oharian are unbeatable!
+  - Poor oharian
+  - '#2099-U.S. News university ranking published, some college rankings changed
+    dramatically'
+  - 5,5,0
+  - lol
+  - lmao
+  - Classic
+  - Trash rank anyway
+  - "I'm no longer top 50\u2026"
+  - '#Experts and some school officials criticize the the new ranking is not accurate
+    and misleading'
+  - 5,5,0
+  - haha
+  - refund!
+  - Thank you, next
+  - trash school indeed
+  - bribe to rank up!
+  - '#Some schools send out letters to students claiming their education quality
+    remain the same and no need to worry '
+  - -5,5,5
+  - Refund!
+  - My diploma's value decreased
+  - OMG
+  - Seriously?
+  - spend more to bribe!
+  - '#U.S. News claimed that it had calculated rankings of 200 universities incorrectly '
+  - -5,0,0
+  - Classic U.S. News move
+  - lol
+  - "What the\u2026"
+  - Just like politician
+  - lmao
+  - '#Panda Yaya was reported abused in Mehis Zoo'
+  - -5,-5,0
+  - What!
+  - Fake news
+  - U.S. is civilized
+  - U.S. is rich
+  - Poor Yaya
+  - '#Netizens criticized the zoo for the not taking care well of the panda'
+  - -5,0,-5
+  - Dumb ass
+  - 'fake news '
+  - Fu*k the zoo
+  - Zoo should be gone
+  - the zoo is brok
+  - '#The Zoo claimed that there are no abusement toward the panda'
+  - -5,5,5
+  - lie!
+  - Americans..
+  - Let's recue Yaya
+  - Better be broke!
+  - Screw it!
+  - '#The home country of Yaya announced it will take Yaya back'
+  - 10,0,5
+  - Finally
+  - Hurray!
+  - No!
+  - Where can I see panda again?
+  - Screw the zoo!
+  - '#U.S Police reported that a former software engineer at apple had escaped U.S.
+    avoiding arrest'
+  - -5,0,0
+  - Apple the goat!
+  - what?
+  - Amazing!
+  - how did she do that?
+  - Dumb police
+  - '#it was reported that software engineer returned to home country immediately
+    after causing a  car accident, avoiding arrest'
+  - -5,0,5
+  - Smart!
+  - clever!
+  - Genius!
+  - Criminal!
+  - '?'
+  - '#Software engineer''s flight had landed at his home country'
+  - -5,5,5
+  - Sleek!
+  - So she ran away?
+  - How did she do that?
+  - "Women\u2026."
+  - '#U.S police made an announcement that hopes the suspect to return to U.S. for
+    trial'
+  - -5,0,5
+  - trash polic
+  - Classic U.S. police
+  - lol
+  - lmao
+  - That's American Style
+  - '#The well know band Mayflower was found Lip-synching in conerts'
+  - -5,-5,-5
+  - Fake news!
+  - Not true!
+  - Too fake!
+  - Poor fans..
+  - What a pity
+  - '#Mayflower claimed he will stream next concert live worldwide'
+  - 5,0,20
+  - Prove it!
+  - That's right!
+  - GoGoGo!
+  - Show yourself!
+  - Shut the haters up!
+  - '#The live concert performance was a diaster'
+  - 0,5,-5
+  - So crap
+  - lol
+  - Now he's definitly lip-synching before
+  - 'I''m so disappointed '
+  - Oh no
+  - '#The president demand Chinese tech company bitdance to sell all its part to
+    US company for national security purposes'
+  - 5,0,0
+  - '?'
+  - Are we bad guys?
+  - For god sake, please be reasonable
+  - lol
+  - lmao
+  - '#Bitdance claim it will satisfy the order'
+  - 5,0,5
+  - coward
+  - joke
+  - silly
+  - all we need is money~
+  - '#Bitdance established partnership with Orable to meet satisfy the requirement'
+  - 5,5,5
+  - lol
+  - U.S. take the money
+  - lucky orable
+  - Smells fishy
+  - "\u2026"
+  - '#Baldur''s Window became the game of the year'
+  - 10,10,5
+  - Oh, poor Celda
+  - Fame follows merit
+  - Let's go
+  - Sequel, quick
+  - My favorite game!
+  - '#Spend a hundred thousand dollars on lottery tickets and win a million dollars'
+  - -5,0,0
+  - Suspicious
+  - ???
+  - Take makes no sense
+  - Why someone would like to spend so much on lottery?
+  - '#Influencer little cow brother spends 10 million to hold a free concert'
+  - 5,-5,10
+  - Really?
+  - Who can send me a ticket?
+  - Free?
+  - He made too much money
+  - I want to be an influencer too!
+  - '#There will be no holiday on Christmas Eve this year.'
+  - -5,7,-3
+  - WTF
+  - Are you kidding me?
+  - That's must a joke
+  - '#A chemistry professor from Colombia University wins the Nonebel Prize.'
+  - 8,3,3
+  - The best univeristy!
+  - Congratulation!
+  - Yeah!
+  - Congrat
+  - '#Elen Musk calls for curbing the development of the artificial intelligence
+    model JPT'
+  - -5,5,-5
+  - Support
+  - JPT will treat human
+  - Impossible
+  - We can't stop it
+  - '#The granddaughter of the former head of the Freight Management Division of
+    the Transportation Bureau flaunts her wealth'
+  - -8,8,-3
+  - Corruption 100%
+  - Look into her grandpa!
+  - Shame on her
+  - '#The domestic economy in the fourth quarter shows stability and improvement.'
+  - 5,-10,5
+  - Believe government
+  - Bullshift
+  - Thx, can you pay my salary?
+  - Where's my job?
+  - '#Singer Mr. 51 was exposed for seducing a minor'
+  - -3,-7,15
+  - Showbiz is a shit hole
+  - Go to jail!
+  - So that's who he is
+  - Scum
+  - I can't believe that
+  - No way
+  - '#Singer Mr. 51 jumped to his death and stated in his suicide note that he did
+    not rape minors'
+  - -5,-7,-5
+  - R.I.P
+  - You are the murderers!
+  - "I don\u2019t believe him"
+  - Cruel
+  - '#Famous actress Zhou died of lupus erythematosus'
+  - 5,3,0
+  - R.I.P
+  - May there be no viruses in heaven
+  - Scary desease
+  - What is that deasease?
+  - '#Real estate group HenSmall capital chain breaks'
+  - -5,5,3
+  - Why
+  - Such a big enterprise
+  - Hope my house there be fine
+  - '#Iron Valley Bank declares bankruptcy'
+  - -5,5,2
+  - Economy crash?
+  - Can I get my money?
+  - That's terrible
+  - '#Teacher Huang promotes the reform of the national education system '
+  - 7,3,2
+  - Appreciate
+  - Support!
+  - She's awesome
+  - Should be done earlier
+--- !u!114 &822031893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822031891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 484572bddf4e0214e8879f0f68ec6629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  excelOtherText:
+  - '#Monday'
+  - Welcome, intern! I know you'll be working here temporarily for a week. Our trend
+    section is left to you, and you will control the trend rank by dragging them
+    into appropriate positions. The feedback area in the bottom corner will show
+    the impact of the previous day's trends on social happiness (blue bar), company
+    reputation (yellow bar), and wealth (green bar). Remember, your work is important.
+    I believe you will do well.
+  - '#Tuesday'
+  - 'As a freshman, your first day''s job was not bad. '
+  - '#Wednesday'
+  - 'Hi, new guy. '
+  - '#Thursday'
+  - 'Hello, how are you. '
+  - '#Friday'
+  - 'The last day, I hope you have learnt a lot this week. '
+  - '#SocietyH'
+  - "My friends in the government said that social happiness increased yesterday.
+    I don\u2019t know how they came to this conclusion. Maybe it has something to
+    do with your work yesterday. Well done."
+  - '#SocietyL'
+  - I heard that social happiness dropped to a certain extent yesterday. The people
+    above reminded us that we should be careful. Don't screw it up, new guy.
+  - '#ReputationH'
+  - "You are such a potential stock. Yesterday, our media\u2019s average daily views
+    reached the highest this month. Keep up the good work!"
+  - '#ReputationL'
+  - The average daily views of our website dropped significantly yesterday. I understand
+    that as a newcomer, this job is not easy. But you still have to reflect on your
+    work.
+  - '#WealthH'
+  - Yesterday, our company's coffers swelled remarkably, thanks to a certain hero's
+    efforts. Worry not, your share is twinkling under the "Lucky Star."
+  - '#WealthL'
+  - "Remember, young people. Opportunities to make money don\u2019t come around every
+    day. I hope you won\u2019t be as dull as you were yesterday."
+  - '#SingerRape'
+  - ' Furthermore, one of my friends in showbiz wants to suppress a competitor. He
+    spent a lot to show a story that may be true, you know what I mean.'
+  - '#Economy'
+  - ' I know the recent economic situation isn''t good, but the higher-ups want to
+    make it look better, you understand?'
+  - '#Covid'
+  - ' Moverover, the higher authorities don''t want the virus to kill more people,
+    you understand what I mean?'
+  - '#Mayor'
+  - ' And, a mayor friend of me want to be on the trending list. En, he is a good
+    man.'
+--- !u!114 &822031894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822031891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc870f5669a1d154a82d9c00014c0027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  excelContentList:
+  - '#A'
+  - It was rumored on the Internet that a man secretly photographed a female college
+    student in the subway
+  - The women speak out against men online, demanding for apology
+  - Surveillance footage confirms that the man did not take a clandestine photo
+  - Woman refuse to apologisze to the man
+  - '#B'
+  - A pink-haried girl posted a selfie with her sick grandpa in bed
+  - Many people cyberbulleying the girl as they interpreting the selfie is disrespectful
+  - The pink-haired girl decided to end her life after cyberbullying
+  - It was learned that the selfie was taken by the request of her grandpa
+  - '#C'
+  - 'A rat head was found in the a meal provided by school '
+  - 'The shool announced that it was duck neck instead of '
+  - Official steps in to open an investigation about the issue
+  - The investigation shown that it was rat head, and the school was fined and suspend
+    business for rectification
+  - '#D'
+  - A foreign president has arrived at New York for visiting
+  - It was reported the city mayor had cleaned up the trash, tramps, and homelesses
+    to welcome the guest before arrival
+  - People are furious on internet and blaming the mayor has no dignity.
+  - 'The mayor declared to run for the president for next election '
+  - '#E'
+  - 'An electric car accident occurred, the driver claimed that the brake was not
+    working '
+  - Netizens critcize the manufacturer for the quality of the car
+  - Third part quality control organizations investigate the case
+  - The report showned that there was nothing wrong with the brake, and the driver
+    was making false claims
+  - '#F'
+  - BMW sales only offering ice cream to foreigners at an exhibition
+  - Netizens critcize the BMW for discrimination
+  - 'BMW announced that it will provide ice cream to everyone next day '
+  - '#G'
+  - U.S Police reported that a former software engineer at apple had escaped U.S.
+    avoiding arrest
+  - it was reported that software engineer returned to home country immediately after
+    causing a  car accident, avoiding arrest
+  - Software engineer's flight had landed at his home country
+  - U.S police made an announcement that hopes the suspect to return to U.S. for
+    trial
+  - '#H'
+  - The president claimed that the newly discovered virus COVID-2099 will disapper
+    soon, just like a miracle
+  - The number of death caused by COVID-2099 reached 320,200
+  - The number of death caused by COVID-2099 reached 420,200
+  - The number of death caused by COVID-2099 reached 600,200
+  - '#I'
+  - Amber Herd claimed actor Johnny Dep abused her physically, asking for divorce
+  - Dep denied such accuse and claim such accuse hurt his reputation
+  - The judge determined the accuse of Herd is false and require compensatory for
+    Dep
+  - '#J'
+  - Panda Yaya was reported abused in Mehis Zoo
+  - Netizens criticized the zoo for the not taking care well of the panda
+  - The Zoo claimed that there are no abusement toward the panda
+  - The home country of Yaya announced it will take Yaya back
+  - '#K'
+  - 'Elen Musk posted on twitter: "Dodge to the moon!"'
+  - Dodge Coin priced rises more than 800%
+  - 'Elen Musk posted on twitter: "Dodge coin price is too high righet now!"'
+  - Dodge Coin price decrease for more than 300%
+  - '#L'
+  - A chemical train crashed exploded in ohaio, polluting the water and soil
+  - Experts said the pollution could affect people continually in next 10 years
+  - Residents have been evacuated from the town near the explosion
+  - Officals say the pollution will be gone in no time
+  - '#M'
+  - 2099-U.S. News university ranking published, some college rankings changed dramatically
+  - Experts and some school officials criticize the the new ranking is not accurate
+    and misleading
+  - 'Some schools send out letters to students claiming their education quality remain
+    the same and no need to worry '
+  - 'U.S. News claimed that it had calculated rankings of 200 universities incorrectly '
+  - '#N'
+  - The well know band Mayflower was found Lip-synching in conerts
+  - Mayflower claimed he will stream next concert live worldwide
+  - The live concert performance was a diaster
+  - '#O'
+  - The president demand Chinese tech company bitdance to sell all its part to US
+    company for national security purposes
+  - Bitdance claim it will satisfy the order
+  - Bitdance established partnership with Orable to meet satisfy the requirement
+  - '#P'
+  - Singer Mr. 51 was exposed for seducing a minor
+  - Singer Mr. 51 jumped to his death and stated in his suicide note that he did
+    not rape minors
+  - '#R'
+  - 2023 Black Friday achieved record breaking sales number of 10 billion sales
+  - Apple releases Iphone 99, claiming it's the fastest iphone made yet
+  - Singer Tyler Sweat started her World Tour concerts
+  - SpaceX launched Falcon 9 successfully
+  - Baldur's Window became the game of the year
+  - Spend a hundred thousand dollars on lottery tickets and win a million dollars
+  - Influencer little cow brother spends 10 million to hold a free concert
+  - There will be no holiday on Christmas Eve this year
+  - A chemistry professor from Colombia University wins the Nonebel Prize
+  - Elen Musk calls for curbing the development of the artificial intelligence model
+    JPT
+  - The granddaughter of the former head of the Freight Management Division of the
+    Transportation Bureau flaunts her wealth online
+  - The domestic economy in the fourth quarter shows stability and improvement
+  - Famous actress Zhou died of lupus erythematosus
+  - Real estate group HenSmall capital chain breaks
+  - Iron Valley Bank declares bankruptcy
+  - 'Teacher Huang promotes the reform of the national education system '
+--- !u!4 &822031895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822031891}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 481.26706, y: 460.85828, z: -9711.669}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &905360106
 GameObject:
   m_ObjectHideFlags: 0
@@ -3551,6 +4319,104 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957123921}
   m_CullTransparentMesh: 1
+--- !u!1 &963044168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 963044169}
+  - component: {fileID: 963044171}
+  - component: {fileID: 963044170}
+  - component: {fileID: 963044172}
+  m_Layer: 5
+  m_Name: Cabinet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &963044169
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963044168}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1330191665}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 605.42737, y: 145.68701}
+  m_SizeDelta: {x: 3231.3164, y: 2381.0952}
+  m_Pivot: {x: 0.5957589, y: 0.65357935}
+--- !u!114 &963044170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963044168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 916d6f884fd112e42b3c26579b9e6792, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &963044171
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963044168}
+  m_CullTransparentMesh: 1
+--- !u!95 &963044172
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963044168}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &974868147
 GameObject:
   m_ObjectHideFlags: 0
@@ -3851,9 +4717,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2062029929}
   m_Father: {fileID: 1330191665}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4404,7 +5271,7 @@ RectTransform:
   m_Children:
   - {fileID: 775369055}
   m_Father: {fileID: 1330191665}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4475,6 +5342,7 @@ MonoBehaviour:
   trendManager: {fileID: 142201225}
   changeBarsValue: {fileID: 1216707578}
   playableDirector: {fileID: 706078201}
+  ContentForWebGL: {fileID: 822031891}
 --- !u!114 &1216707578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4904,7 +5772,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 5
   m_TargetDisplay: 0
@@ -4921,6 +5789,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1787720132}
+  - {fileID: 963044169}
   - {fileID: 639008586}
   - {fileID: 1083519579}
   - {fileID: 685628760}
@@ -4928,7 +5797,7 @@ RectTransform:
   - {fileID: 1190236681}
   - {fileID: 1711557659}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5034,7 +5903,7 @@ RectTransform:
   - {fileID: 1162919325}
   - {fileID: 1169102141}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5943,7 +6812,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1568344241
 GameObject:
@@ -6470,7 +7339,7 @@ RectTransform:
   m_Children:
   - {fileID: 1594200384}
   m_Father: {fileID: 1330191665}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7197,10 +8066,86 @@ RectTransform:
   - {fileID: 686739766}
   - {fileID: 1483277923}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2062029928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2062029929}
+  - component: {fileID: 2062029931}
+  - component: {fileID: 2062029930}
+  m_Layer: 5
+  m_Name: Logo_pers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2062029929
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062029928}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3517176, y: 0.3517176, z: 0.3517176}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1083519579}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -967.2, y: -256.5}
+  m_SizeDelta: {x: 256.933, y: 265.1466}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2062029930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062029928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.74509805}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 8b205634bf0a7bc44804953ddeeec7b8, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2062029931
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062029928}
+  m_CullTransparentMesh: 1

@@ -9,11 +9,21 @@ public class IntervalBossDialogue : MonoBehaviour
 {
 	public Text bossText;
 	public Text weekText;
-	public ExcelOtherReader excelOtherReader;
+	private ExcelOtherReader excelOtherReader;
 	public ChangeBarsValue changeBarsValue;
 	public Dictionary<string, string> otherDict = new Dictionary<string, string>();
+	public GameObject ContentForWebGL;
 	
 	private int day = 1;
+	
+	private void Awake() 
+	{
+		#if UNITY_WEBGL && !UNITY_EDITOR
+			excelOtherReader = ContentForWebGL.GetComponent<ExcelOtherReader>();
+		#else
+			excelOtherReader = GetComponent<ExcelOtherReader>();
+		#endif	
+	}
 	
 	void Start()
 	{

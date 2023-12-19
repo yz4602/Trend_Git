@@ -7,7 +7,6 @@ using ExcelDataReader;
 
 public class ExcelCommentReader : MonoBehaviour
 {
-	[HideInInspector]
 	public List<string> excelCommentList;
 	
 	private void Start()

@@ -11,6 +11,7 @@ public class GenerateEventLists : MonoBehaviour
 	public Transform eventParent;
 	public RectTransform eventPosition;
 	public int eventNumber;
+	public GameObject ContentForWebGL;
 	private ExcelReader excelReader;
 	public static Dictionary<string, List<string>> eventDictionary;
 	public static Dictionary<string, string> tempEventDictionary;
@@ -20,7 +21,11 @@ public class GenerateEventLists : MonoBehaviour
 	{
 		eventDictionary = new Dictionary<string, List<string>>();
 		tempEventDictionary = new Dictionary<string, string>();
-		excelReader = GetComponent<ExcelReader>();
+		#if UNITY_WEBGL && !UNITY_EDITOR
+			excelReader = ContentForWebGL.GetComponent<ExcelReader>();
+		#else
+			excelReader = GetComponent<ExcelReader>();
+		#endif
 	}
 	
 	// Start is called before the first frame update
@@ -176,3 +181,4 @@ public class GenerateEventLists : MonoBehaviour
 		return null;
 	}
 }
+

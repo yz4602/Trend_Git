@@ -10,12 +10,17 @@ public class GenerateCommentsList : MonoBehaviour
 	public TrendManager trendManager;
 	public ChangeBarsValue changeBarsValue;
 	public PlayableDirector playableDirector;
+	public GameObject ContentForWebGL;
 	private Dictionary<string, List<string>> commentDictionary = new Dictionary<string, List<string>>();
 	
 	// Start is called before the first frame update
 	void Awake() 
 	{
-		excelCommentReader = GetComponent<ExcelCommentReader>();
+		#if UNITY_WEBGL && !UNITY_EDITOR
+			excelCommentReader = ContentForWebGL.GetComponent<ExcelCommentReader>();
+		#else
+			excelCommentReader = GetComponent<ExcelCommentReader>();
+		#endif
 	}
 	
 	void Start()
