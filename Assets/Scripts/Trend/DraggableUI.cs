@@ -27,6 +27,7 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 
 	public void OnBeginDrag(PointerEventData eventData)
 	{
+		SoundMgr.Instance.PlaySound("select");
 		canvasGroup.blocksRaycasts = false;
 		transform.SetAsLastSibling();
 		tempVector = this.rectTransform.anchoredPosition;
@@ -51,6 +52,7 @@ public class DraggableUI : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
 
 		if (snapArea.Overlaps(rectTransformBounds))
 		{
+			SoundMgr.Instance.PlaySound("snap");
 			Vector2 newSnapPosition = FindClosestSnapPosition();
 			GameObject imageInNewSlot;
 

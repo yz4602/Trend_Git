@@ -16,4 +16,9 @@ public class CheckInteract : MonoBehaviour
 			GetComponent<Button>().interactable = false;
 		}
 	}
+	
+	public void PlayClickSound()
+	{
+		SoundMgr.Instance.PlaySound("click");
+	}
 }

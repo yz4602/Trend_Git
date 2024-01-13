@@ -28,6 +28,7 @@ public class IntervalBossDialogue : MonoBehaviour
 	void Start()
 	{
 		OrganizeCommentDict();
+		SoundMgr.Instance.PlayBKMusic("trendBGM");
 	}
 
 	private void OrganizeCommentDict()
